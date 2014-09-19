@@ -17,73 +17,90 @@
 The conservation dissipation formalism of irreversible thermodynamics provides a new approach to model the heat transfer phenomena. The method begins with the entropy of the system and utilizes the stability criterion of non-equilibrium thermodynamics to get the relation between the conserved variables and the dissipative ones. Different from other methods, we assume the dissipative variables unknown and the relation between the dissipative variables and the conserved ones are obtained with the stability criterion. The arrived model is symmetric hyperbolic in mathematics and satisfies the second law of thermodynamics automatically. Some of the popular models in heat transfer are derived in our approach in the paper, including the Cattaneo's law, the thermomass model and the Guyer-Krumhansl's model. Our approach is flexible and paves a new way to think of the heat transfer modeling. 
 \end{abstract}
 
-\section{Introduction}dsafdsaf
-Recent years have seen an urge to develop an reasonable way to model the heat transfer phenomena in nano and micro systems \cite{chen2005nanoscale,tzou1996macro,wang2007heat,ding2006heat}. The heat transfer phenomena in the nano and mirco system are usually fast or in small scales. The Fourier's law and the Cattaneo's law are not enough to model the heat transfer phenomena in these systems \cite{chen2005nanoscale,Jou1996extended}. Various models have been developed such as the Guyer-Krumhansl's model \cite{guyer1966solution}, the thermomass model \cite{tzou2010nonlocal}, the ballistic-diffusive model \cite{chen2001ballistic,chen2002ballistic}, etc. Since the system is usually not in thermodynamics equilibrium, these models are usually obtained from the non-equilibrium thermodynamics. Different treatments of non-equilibrium thermodynamics have been proposed in the recent years, including the Classical Irreversible Thermodynamics (CIT) \cite{lebon2008classical}, the Extended Irreversible Thermodynamics (EIT) \cite{Jou1996extended}, the Rational Thermodynamics (RT) \cite{muller1998rational}, the GENERIC \cite{hans2005beyond}, the ThermoMass Theory \cite{zeng2006motion,dong2011generalized} and many more. CIT is based on the local equilibrium hypothesis. The fluxes variable are determined to be a function of the conserved variables and their spatial derivatives. EIT assumes the entropy is not only depended on the internal variable, like the internal energy $u$, but also on the flux variables like the heat flux $\mathbf{q}$ as well as its spatial derivatives. The equation obtained from CIT is usually second order parabolic, leading to an infinite propagating speed. EIT's evolution model is usually a system of first order hyperbolic equations. However, the hyperbolic equation is not guaranteed to be of conserved form and the well-posedness of the evolution equations needs further discussion.\cite{Jou1996extended} The thermomass theory is based on the Einstein's mass-energy equation. The flow of heat is similar as the flow of mass in the theory. The derived model is first order hyperbolic but the well-posedness of the equations is not clear.%\cite{zeng2006motion} 
+\section{Introduction}
+Recent years have seen an urge to develop an reasonable way to model the heat transfer phenomena in nano and micro systems \cite{chen2005nanoscale,tzou1996macro,wang2007heat,ding2006heat}. The heat transfer phenomena in the nano and mirco system are usually fast or in small scales. The Fourier's law and the Cattaneo's law are not enough to model the heat transfer phenomena in these systems \cite{chen2005nanoscale,Jou1996extended}. Various models have been developed such as the Guyer-Krumhansl's model \cite{guyer1966solution}, the thermomass model \cite{tzou2010nonlocal}, the ballistic-diffusive model \cite{chen2001ballistic,chen2002ballistic}, etc. Since the system is usually not in thermodynamics equilibrium, these models are usually obtained from the non-equilibrium thermodynamics. Different treatments of non-equilibrium thermodynamics have been proposed in the recent years, including the Classical Irreversible Thermodynamics (CIT) \cite{lebon2008classical}, the Extended Irreversible Thermodynamics (EIT) \cite{Jou1996extended}, the Rational Thermodynamics (RT) \cite{muller1998rational}, the GENERIC \cite{hans2005beyond}, the ThermoMass Theory \cite{zeng2006motion,dong2011generalized} and many more. CIT is based on the local equilibrium hypothesis. The fluxes variable are determined to be a function of the conserved variables and their spatial derivatives. EIT assumes the entropy is not only depended on the internal variable, like the internal energy $u$, but also on the flux variables like the heat flux $\mathbf{q}$ as well as its spatial derivatives. The equation obtained from CIT is usually second order parabolic, leading to an infinite propagating speed. EIT's evolution model is usually a system of first order hyperbolic equations. However, the hyperbolic equation is not guaranteed to be of conserved form and the well-posedness of the evolution equations needs further discussion\cite{Jou1996extended}. The Rational Extended Thermodynamics (RET) developed by \cite{needed} introduce new enlarged state variables to describe the non-equilibrium and express the extended variable in functions of the classical state variables. The function is determined with the requirement of positive local entropy production. The equations obtained from RET is naturally of conservation form. However, the way of determining the function sometimes needs complex calculation. The thermomass theory is based on the Einstein's mass-energy equation. The flow of heat is similar as the flow of mass in the theory. The derived model is first order hyperbolic but the well-posedness of the equations is not clear.%\cite{zeng2006motion} 
 
-Our aim of this paper is to provide a new way of heat transfer modeling which is physical insightful and mathematical reasonable. We provide a unified approach of heat transfer modeling with the conservation-dissipation formalism of non-equilibrium thermodynamics proposed by Yi Zhu, etc.\cite{zhu2014conservation} Similar with EIT, we begins with the entropy. The new dissipative variables are used instead of the heat flux as the independ variable of the entropy. The relationship between the dissipative variables and the internal variables and the flux variables is obtained based on the conservation-dissipative formalism of non-equilibrium thermodynamics. We arrived at a system of symmetric hyperbolic systems with the conservation-dissipation structure by Wen-An Yong \cite{yong2008interesting}. The equations are well-posed and have many good properties. For example, the  model will satisfy the second law of thermodynamics automatically. 
+Our aim of this paper is to provide a new way of heat transfer modeling which is physical insightful and mathematical reasonable. We provide a unified approach of heat transfer modeling with the conservation-dissipation formalism of non-equilibrium thermodynamics proposed by Yi Zhu, etc.\cite{zhu2014conservation} Similar with EIT, we begins with the entropy. Similar with RET, we introduce new dissipative variables to describe the non-equilibrium states. The new dissipative variables are used instead of the heat flux as the independent variable of the entropy. The relationship between the dissipative variables and the state variables is obtained based on the conservation-dissipative formalism of non-equilibrium thermodynamics. We arrived at a system of symmetric hyperbolic systems with the conservation-dissipation structure by Wen-An Yong \cite{yong2008interesting}. The equations are well-posed and have many good properties. For example, the  model will satisfy the second law of thermodynamics automatically. Our method is a combination of the CIT and RET method with a rigorous mathematical foundation. 
 
 
 \subsection{The  heat transfer modeling with the conservation-dissipation formalism of irreversible thermodynamics}
-Here we give the conservation dissipation formalism of irreversible thermodynamics for the heat transfer phenomena. 
-
-From the first law of thermodynamics, we have
-\begin{equation}
+The first law of thermodynamics gives the relation between the internal energy $u$ and the heat flux $\mathbf{q}$.
+\begin{eqnarray}
 u_t+\nabla \cdot \mathbf{q}=0
-\end{equation}
+\end{eqnarray}
 
-In order to describe the non-equilibrium state, we introduce the dissipation variable $c$. $c$ may be a scalar, vector or tensor. In local equilibrium, $c=0$. And $c$ measures how far the system goes beyond local equilibrium. We take $u$ and $c$ as the independent variable. And the heat flux is a function of $u$ and $c$.
-\begin{equation}
-\mathbf{q}=\mathbf{q}(u,c)
-\end{equation}
+The classical Fourier's law for heat conduction is 
+\begin{eqnarray}
+\mathbf{q}_t=\lambda \nabla T
+\end{eqnarray}
+where $\mathbf{q}$ is the heat flux, $T$ is the temperature, and $\lambda$ is the heat conductivity. The model could be obtained with CIT in the following way.
 
-The evolution equation for the system is assumed to be
-\begin{equation}
-\left( \begin{array}{ll} u \\ c \end{array} \right)_t +\nabla \cdot \left( \begin{array}{ll} \mathbf{q}(u,c) \\ \Phi(u,c) \end{array} \right) = \left( \begin{array}{ll} 0 \\ w(u,c) \end{array} \right)
-\end{equation}
-or take $U=(u,c)^T$ and we have
-\begin{equation}
-U_t+\nabla \cdot F(U)=W(U)
-\end{equation}
-where $W(U)=(0,w(u,c))^T$
-In order to satisfy the conservation dissipation structure, we need 
+The CIT makes the local equilibrium hypothesis of the system. The variables in the equilibrium thermodynamics remain significant and the entropy of the system is only related with these state variables. Assume the entropy of the system only depends on the internal energy $u$
+\begin{eqnarray}
+S=S(u)
+\end{eqnarray}
 
-1.(Symmetric Condition) There is a strictly concave function $S(u,c)$ such that $S_{UU} F_U(U)$ is symmetric for all $U$ under consideration.
+Assume the entropy production could be expressed as 
+\begin{eqnarray}
+S_t=-\nabla \cdot \mathbf{J} + \sigma
+\end{eqnarray}
+where $\sigma$ is the local entropy production, $\mathbf{J}$ is the local entropy flux.
+Then
+\begin{eqnarray}
+S_t=S_u u_t = -T^{-1} \nabla \cdot \mathbf{q} = -(T^{-1} \mathbf{q})+ \mathbf{q} \cdot \nabla T^{-1}
+\end{eqnarray}
+To guarantee the positiveness of the local entropy production, we take
+\begin{eqnarray}
+\mathbf{q}=\alpha \nabla T^{-1}
+\end{eqnarray}
+Taking $\alpha={\lambda}{T^2}$, one will recove the Fourier's law.
 
-2.(Stability Condition) There is a symmetric and positively definite matrix $M(U)$ such that $W(U)=M(U)S_c(U)$.
+The Fourier's law is not valid in the small scales or in high frequencies. Fourier's law neglects the time needed for acceleration of the heat flow. In order to take the acceleration of heat flow into consideration, the Cattaneo's law was developed by Cattaneo \cite{Cattaneo}. The Cattaneo's law is 
+\begin{eqnarray}
+\tau \mathbf{q}_t = -(\mathbf{q}+\lambda \nabla T)
+\end{eqnarray}
+where $\tau$ is the relaxation time for the heat flux changing with the temperature.
+From the book \cite{EIT}, the local entropy production of the Cattaneo's law is not positive with the CIT theory. It means that the entropy described with the equilibrium state variables does not follow the second law of thermodynamics. In order to overcome the problem, EIT introduces new variables like $\mathbf{q},\nabla \mathbf{q}$ as the dependent variables of the entropy. RET introduces a new variable $\mathbf{Q}$ as a unknown variable the entropy depends on and express it with the function of the equilibrium state variables and the heat flux. In both theories, The non-equilibrium entropy is not only depended on the equilibrium variables, but also on the non-equilibrium ones. And the non-equilibrium information of the system is contained in the form of the entropy. 
+
+The system with Cattaneo's law could be written as
+\begin{eqnarray}
+\left( \begin{array}{ll} u \\ \mathbf{q} \end{array} \right)_t +\nabla \cdot \left( \begin{array}{ll} \mathbf{q} \\ \frac{\lambda}{\tau} T \mathbf{I} \end{array} \right) = \left( \begin{array}{ll} 0 \\ \frac{1}{\tau} \mathbf{q} \end{array} \right)
+\end{eqnarray}
+where $I$ is the unit tensor.
+
+The system of equations are in the conservation-dissipation forms \cite{yong2008interesting}. The evolution equation for $\mathbf{q}$ takes the system into non-equilibrium states and the source for the $\mathbf{q}$ to be not in the local equilibrium  state is $\frac{\mathbf{q}}{\tau}$. If it's small the system will be in the local equilibrium state with the Fourier's law holds.
+From this example, one could discover that the non-equilibrium states of the system is caused by the dissipation of the dissipative variables. So it's natural to introduce a new variable $w$ as the non-equilibrium variable as in RET. Include the varibale into the dependent variables of the entropy, and assume the evolution of the dissipative variable  is
+\begin{eqnarray}
+w_t+\nabla \phi(u,w)=v(u,w)
+\end{eqnarray}
+
+To make the system follows the conservation-dissipation formalism of irreversible thermodynamics, the entropy $S = S(u,w)$ should statisfies
+
+1.(Symmetric Condition) There is a strictly concave function $S(u,w)$ such that $S_{UU} F_U(U)$ is symmetric for all $U=(u,w)$ under consideration.
+
+2.(Stability Condition) There is a symmetric and positively definite matrix $M(U)$ such that $v(U)=M(U)S_c(U)$.
 
 If the system satisfies these two conditions, we call it follows the conservation-dissipation structure. And we then have
 \begin{equation}\label{entropyproduction}
 S_t(U)+\nabla \cdot J(U)=S_c(U)M(U)S_c(U) \ge 0
 \end{equation}
-Actually $S$ could be viewed as the entropy. And \eqref{entropyproduction} is the positive local entropy production condition which is a generalization of the second law of thermodynamics.
+\eqref{entropyproduction} is actually the positive local entropy production condition which is a generalization of the second law of thermodynamics.
 
 The  conservation-dissipation structure guarantees that the derived model satisfies the second law of thermodynamics automatically. And the derived equations are symmetric hyperbolic in conservation form. It's well-posed in mathematics\cite{friedrichs1971systems}. The equations have been studied by Wen-An Yong with details\cite{yong2008interesting,yong1999singular,kawashima2004dissipative}.
 
 
-\section{The unified approach to heat transfer}
-Based on the conservation-dissipation formalism of non-equilibrium thermodynamics, our approach will begins with the entropy $S$ and write the local entropy production as a function of the conserved variables and the dissipative ones. The key factor of our approach is to choose a positively definite matrix $M(U)$, to satisfy the stability condition. And in order to write the evolution equation using the internal variable and the heat flux, the relationship between the heat flux with the dissipative variables is suggested. The approach is direct and flexible and will be discussed in details in this section.
+Based on the conservation-dissipation formalism of non-equilibrium thermodynamics, our approach will begins with the entropy $S$ and write the local entropy production as a function of the conserved variables and the dissipative ones. The key factor of our approach is to choose a positively definite matrix $M(U)$, to satisfy the stability condition. And in order to write the evolution equation using the internal variable and the heat flux, the relationship between the heat flux with the dissipative variables is suggested. 
 
-The existence of entropy is crucial for the conservation-dissipation structure. So our approach begins with the concrete form of the entropy function $S$. 
-\begin{equation}\label{entropyform}
-S=S(u,\mathbf{c})
-\end{equation}
-
-Then in order to satisfy the conservation-dissipation structure, the time derivative of $S$ could be written in the following form
+We choose a new dissipative variable $w=\mathbf{c}$ and in order to satisfy the conservation-dissipation structure, the time derivative of $S$ could be written in the following form
 \begin{equation}\label{St}
 S_t=-\nabla \cdot J+\sigma
 \end{equation}
-From \eqref{entropyform} we have
-\begin{equation}
-S_t = S_u u_t + S_\mathbf{c} \cdot \mathbf{c}_t
-\end{equation}
-From the energy conservation law one has
-\begin{equation}
-u_t + \nabla \cdot \mathbf{q}=0
-\end{equation}
-Taking it into \eqref{St}, one can obtain
-\begin{equation}
-S_t = -S_u \nabla \cdot \mathbf{q} +S_\mathbf{c} \cdot \mathbf{c}_t=-\nabla \cdot(\mathbf{q}S_u)+S_\mathbf{c} \cdot \mathbf{c}_t+\mathbf{q} \cdot \nabla S_u
-\end{equation}
+We have
+\begin{eqnarray}
+S_t &=& S_u u_t + S_\mathbf{c} \cdot \mathbf{c}_t \\
+ &=& -S_u \nabla \cdot \mathbf{q} +S_\mathbf{c} \cdot \mathbf{c}_t\\
+&=& -\nabla \cdot(\mathbf{q}S_u)+S_\mathbf{c} \cdot \mathbf{c}_t+\mathbf{q} \cdot \nabla S_u
+\end{eqnarray}
 
 If we take $\mathbf{q}= S_\mathbf{c}$, we arrive at
 \begin{equation}
@@ -132,7 +149,7 @@ Note the equilibrium temperature and non-equilibrium temperature is defined in a
 
 The flexible of our approach lies in the choose of the appropriate matrix $M(U)$ and the dissipative variables $\mathbf{c}$. The dissipative variable may not be a vector, it also could be a tensor or some vectors and tensors. 
 
-The positive local entropy production is also needed for our approach like what was done in the EIT. However, we choose different dissipative variables from EIT. And all our derivation is based on the conservation-dissipation formalism of non-equilibrium thermodynamics. The stability condition is crucial for our development of the model. With the stability condition, the second law of thermodynamics is automatically followed. We introduce a new variable rather than assume the variable like $\mathbf{q},\nabla \mathbf{q}$ to measure how far the system goes away from equilibrium. We think it's more natural  since one has no idea what leads to non-equilibrium sometimes. The EIT always works around equilibrium, but our approach works far from equilibrium since we do not necessarily need to assume the   quadratic form of the local entropy production and the matrix $M(U)$ could be any nonlinear positively definite matrix. Besides, the temperature in our approach is clear. $T$ is the temperature measuring the energy of the equilibrium state and $\theta$ is the temperature measuring the non-equilibrium entropy production caused by the dissipation.  
+The positive local entropy production is also needed for our approach like what was done in the EIT. However, we choose different dissipative variables from EIT. And all our derivation is based on the conservation-dissipation formalism of non-equilibrium thermodynamics. The stability condition is crucial for our development of the model. With the stability condition, the second law of thermodynamics is automatically followed. We introduce a new variable rather than assume the variable like $\mathbf{q},\nabla \mathbf{q}$ to measure how far the system goes away from equilibrium. We think it's more natural  since one has no idea what leads to non-equilibrium sometimes. Our method is fully non-linear. The matrix $M(U)$ could be any non-linear positively definite matrix, and the entropy could be defined in any concave form. We do not necessary take the form $S=S_{eq}+\delta S$ where $\delta S$ is small. We could abandon the local equilibrium hypothesis. Besides, the temperature in our approach is clear. $T$ is the temperature measuring the energy of the equilibrium state and $\theta$ is the temperature measuring the non-equilibrium entropy production caused by the dissipation.  
 
 Actually our approach clarify the origin of the non-equilibrium state of the system. It's caused by the dissipative variables with the local entropy production. The system contains the conserved equations responsible for the law of energy conservation and the dissipative equations responsible for the non-equilibrium state. The system is thus included in a interesting class of partial differential equations which has been studied by \cite{yong2008interesting}. It's physical meaningful as well as mathematical reasonable.
 
@@ -145,9 +162,10 @@ The Cattaneo's law was developed by Cattaneo \cite{cattaneo2011sulla}. It introd
 \begin{equation}
 S(u,\mathbf{c})=S_{eq}(u)-\frac{1}{2\alpha_0} \mathbf{c}^2
 \end{equation}
+
 we have
 \begin{equation}
-\mathbf{q}=S_{\mathbf{c}}=-\frac{\mathbf{c}}{\alpha_0} \quad T^{-1}=\frac{\partial S_{eq}(u)}{\partial u}
+\mathbf{q}=S_{\mathbf{c}}=-\frac{\mathbf{c}}{\alpha_0} \quad \theta^{-1}=T^{-1}=\frac{\partial S_{eq}(u)}{\partial u}
 \end{equation}
 
 The evolution equation for $\mathbf{c}$ is 
@@ -173,6 +191,18 @@ From the derivation, we could see that our approach is direct and simple. One on
 
 As $\tau \rightarrow 0$, $\mathbf{q}+\lambda \nabla T=0$, which is the Fourier's law. The limit process could have a rigorous proof \cite{yong2008interesting}.
 The derived equation is thus hyperbolic and follows the conservation-dissipation formalism. We could see that the dissipative variable $\mathbf{c}$ is proportional with the heat flux $\mathbf{q}$. So the quantity of  $\mathbf{q}$ measures the non-equilibrium of the system.
+
+Now we will justify the concavity of the entropy $S=S(u,\mathbf{c})$. The Hessian matrix of $S$ is
+\begin{eqnarray}
+\left( \begin{array}{ll} -\frac{1}{c_v T^2} & 0 \\ 0 & -\frac{1}{\alpha_0} \end{array} \right)
+\end{eqnarray}
+where $c_v=\frac{d u}{d T}$.
+The concavity of the entropy follows from the negative definite of the Hessian matrix which requires 
+\begin{eqnarray}
+\frac{1}{c_v T^2}>0 \\
+\alpha_0=\frac{\tau}{\lambda T^2}>0
+\end{eqnarray}
+this requirements is consistent with the stability requirements obtained from EIT \cite{EIT}.
 
 Here the generalized temperature $\theta$ is the same with the equilibrium temperature $T$. Since the non-equilibrium term $-\frac{1}{2\alpha_0}\mathbf{c}^2$ is independent of $u$, the change of internal energy has no influence on the local entropy production. The generalized temperature, defined by $\frac{\partial S}{\partial u}$ measures the local entropy production caused by the change of internal energy. Unlike in the EIT and RT, the generalized temperature is not responsible for the whole part of non-equilibrium states. The inverse of the temperature is defined to be the change of entropy with the change of the internal energy. Thus we have a consistent meaning of the temperature both in the equilibrium case and the non-equilibrium case.
 
@@ -223,46 +253,46 @@ where
 \tau_{TM}=\frac{\lambda \rho}{2 \gamma C_v^2 T} \quad \mathbf{L}=\frac{\lambda \rho}{2 \gamma C_v^3 T^2}\mathbf{q} \quad M_H^2=\frac{\lambda \rho \mathbf{q}^2}{2\gamma C_v^3 T^3}
 \end{equation}
 
-The thermal mass model is 
+The thermomass model is 
 \begin{equation}
 \tau_{TM} \mathbf{q}_t-C_v \mathbf{L}T_t+\nabla \mathbf{q} \cdot \mathbf{L}+\lambda(1-M_H^2)\nabla T+\mathbf{q}=0
 \end{equation}
 
 The difference between our model and the thermomass model is the coefficient of the terms involving the spatial gradient of $\mathbf{q}$ and $T$.
 
+Now we justify the concavity of the entropy. The Hessian matrix of $S(u,\mathbf{c})$ is
+\begin{eqnarray}
+\left( \begin{array}{ll} -\frac{1}{c_v T^2}-\frac{1}{2}(\frac{1}{\alpha(u)})'' \mathbf{c}^2 & (\frac{1}{alpha})'\mathbf{c} \\ (\frac{1}{alpha})'\mathbf{c} & -\frac{1}{\alpha(u)} \end{array} \right)
+\end{eqnarray}
+In order for the matrix to be positively definite, the diagonal components and the determinant should be negative. The first condition is satisfied under $c_v>0$, and the second condition gives
+\begin{eqnarray}
+\mathbf{q}=\alpha(u)\mathbf{c} \le \frac{\rho c_v T}{\sqrt{6}} \sqrt{\frac{\lambda}{\rho c_v \tau_{TM}}}
+\end{eqnarray}
+where $\sqrt{\frac{\lambda}{\rho c_v \tau_{TM}}}$ is the maximum speed of thermal waves \cite{EIT}. Then the concavity requirement is only statisfied under the critical heat flux.
+
+
 From the example, we could see that the simple entropy form could lead to complex evolution equations for the heat flux. The evolution equation expressed in the generalized temperature \eqref{eq_theta} and in the equilibrium temperature \eqref{eq_Teq} has the same entropy form. The equation  \eqref{eq_theta} is similar with the Cattaneo's law but the coefficient of the $\mathbf{q}_t$ is depended on the internal energy $u$. And the temperature is generalized. \eqref{eq_Teq} gives the evolution equation under equilibrium temperature $T$. In our approach, the non-equilibrium of the system is described by the dissipative variables, which could be expressed as a function of the internal energy $u$ and the heat flux $\mathbf{q}$. So the definition of generalized temperature is clear and we just introduce it as a derived variable and not as a basic variable. Unlike many other theories like EIT takes the generalized temperature a central role in expressing the non-equilibrium, we takes the non-equilibrium variables the key factor to describe non-equilibrium.
 
 We have established the connection between the thermomass model with the Cattaneo's law with this example.
 \subsection{The Guyer-Krumhansl's model}
-The Guyer-Krumhansl's model takes consideration of the gradient of the heat flux tensor. In order to include the spatial gradient of the flux tensor, we introduce an additional tensor $\mathbf{Q}$ in our dissipation variable. And the non-equilibrium variables for the system are $\mathbf{c}$ and $\mathbf{Q}$.
-We assume the tensor $\mathbf{Q}$ is symmetry.
+The Guyer-Krumhansl's model takes consideration of the gradient of the heat flux tensor. In order to include the spatial gradient of the flux tensor, we introduce an additional tensor $\mathbf{Q}$ in our dissipation variable. And the non-equilibrium variables for the system are $\mathbf{c}$ and $\mathbf{Q}$.We assume the tensor $\mathbf{Q}$ is symmetry and decompose the tensor $\mathbf{Q}=\mathring{\mathbf{Q}}+Q\mathbf{U}$, where $\mathbf{U}$ is the unit tensor and $tr(\mathring{\mathbf{Q}})=0$. Then we could take $w=\{\mathbf{c},\mathring{\mathbf{Q}},Q\}$.
+
 Assume the entropy has the form
 \begin{equation}
-S(u,\mathbf{c},\mathbf{Q})=S_{eq}(u)-\frac{1}{2 \alpha_0}\mathbf{c}^2-\frac{1}{2\tau_1} {\mathring{\mathbf{Q}}}:{\mathring{\mathbf{Q}}}-\frac{1}{2\tau_2}Q^2
-\end{equation}
-where $\mathbf{Q}=\mathring{\mathbf{Q}}+Q\mathbf{U}$. $\mathbf{U}$ is the unit tensor and $tr(\mathring{\mathbf{Q}})=0$.
-
-We also decompose the tensor $S_{\mathbf{Q}}$ into 
-\begin{equation}
-S_{\mathbf{Q}}=\mathring{S}_\mathbf{Q}+\bar{S}_\mathbf{Q}\mathbf{U} 
-\end{equation}
-where $\mathring{S}_{\mathbf{Q}}$ is the traceless part of $S_{\mathbf{Q}}$.
-From the form of the entropy, we could obtain
-\begin{equation}
-\mathring{S}_{\mathbf{Q}}=-\frac{1}{\tau_1}\mathring{\mathbf{Q}} \quad \bar{S}_{\mathbf{Q}}=-\frac{1}{\tau_2} Q
+S(u,\mathbf{c},\mathring{\mathbf{Q}},Q)=S_{eq}(u)-\frac{1}{2 \alpha_0}\mathbf{c}^2-\frac{1}{2\tau_1} {\mathring{\mathbf{Q}}}:{\mathring{\mathbf{Q}}}-\frac{1}{2\tau_2}Q^2
 \end{equation}
 
 Then apply the calculation
 \begin{eqnarray}
-S_t &=& S_u u_t +S_{\mathbf{c}} \cdot \mathbf{c}_t + S_{\mathbf{Q}}:\mathbf{Q}_t \\
-    &=& -S_u \nabla \cdot \mathbf{q} + \mathring{S}_{\mathbf{Q}}:(\mathring{\mathbf{Q}})_t+\bar{S}_{\mathbf{Q}}Q \\
-    &=& -\nabla \cdot (S_u \mathbf{q}+\nabla S_\mathbf{Q} \cdot \mathbf{q})+(\mathbf{c}_t+\nabla \cdot S_{\mathbf{Q}}+\nabla S_u) \cdot \mathbf{q} \\
-&& +\mathring{S}_{\mathbf{Q}}:(\mathring{\mathbf{Q}}_t+(\mathring{\nabla \mathbf{q}})^{sym})+\bar{S}_{\mathbf{Q}}(Q_t+\frac{1}{3}\nabla \cdot \mathbf{q})
+S_t &=& S_u u_t +S_{\mathbf{c}} \cdot \mathbf{c}_t + S_{\mathring{\mathbf{Q}}}:\mathring{\mathbf{Q}}_t+S_Q Q \\
+    &=& -S_u \nabla \cdot \mathbf{q} + S_{\mathring{\mathbf{Q}}}:(\mathring{\mathbf{Q}})_t+S_QQ \\
+    &=& -\nabla \cdot (S_u \mathbf{q}+\nabla (S_{\mathring{\mathbf{Q}}}+S_Q) \cdot \mathbf{q})+(\mathbf{c}_t+\nabla \cdot (S_{\mathring{\mathbf{Q}}}+S_Q)+\nabla S_u) \cdot \mathbf{q} \\
+&& +S_{\mathring{\mathbf{Q}}}:(\mathring{\mathbf{Q}}_t+(\mathring{\nabla \mathbf{q}})^{sym})+S_Q(Q_t+\frac{1}{3}\nabla \cdot \mathbf{q})
 \end{eqnarray}
 
 To guarantee the positiveness of the local entropy production we follow from the conservation-dissipation structure.
 \begin{equation}
-\left( \begin{array}{ll} \mathbf{c}_t+\nabla \cdot S_{\mathbf{Q}}+\nabla S_u \\ \mathring{\mathbf{Q}}_t+(\mathring{\nabla \mathbf{q}})^{sym} \\ Q_t+\frac{1}{3} \nabla \cdot \mathbf{q} \end{array} \right) = M \left( \begin{array}{l} \mathbf{q} \\ \mathring{S}_{\mathbf{Q}} \\\bar{S}_{\mathbf{Q}} \end{array} \right) 
+\left( \begin{array}{ll} \mathbf{c}_t+\nabla \cdot (S_{\mathring{\mathbf{Q}}}+S_Q)+\nabla S_u \\ \mathring{\mathbf{Q}}_t+(\mathring{\nabla \mathbf{q}})^{sym} \\ Q_t+\frac{1}{3} \nabla \cdot \mathbf{q} \end{array} \right) = M \left( \begin{array}{l} \mathbf{q} \\ S_{\mathring{\mathbf{Q}}} \\S_Q \end{array} \right) 
 \end{equation}
 
 If we take $M$ to be 
@@ -293,8 +323,21 @@ we arrive at the Guyer-Krumhansl's model \cite{Jou1996extended}
 Notice that $\lambda, \tau$ may depend on $T$ but $d$ is a constant.
 
 Since we have applied a limit process, the obtained model is the relaxation of hyperbolic partial differential equations. the GK model is of second parabolic. And if we choose $\tau_1,\tau_2$ not to be very small, then the evolution equations will be hyperbolic, leading to a generalized GK model.
+\begin{eqnarray}
+\alpha_0 \mathbf{q}_t - \nabla \cdot ({\frac{1}{\tau_1} \mathring{\mathbf{Q}}}+\frac{1}{\tau_2}Q)+\nabla T^{-1} = M_0 \mathbf{q} \\
+\mathring{\mathbf{Q}}_t+(\mathring{\nabla \mathbf{q}})^{sym}=-\frac{M_1}{\tau_1}\mathring{\mathbf{Q}} \\
+Q_t+\frac{1}{3} \nabla \cdot \mathbf{q}=-\frac{M_2}{\tau_2}Q
+\end{eqnarray}
 
-The limit process in the derivation is mathematical meaningful and could be analyzed with the tools from the theory of partial differential equations\cite{yong2008interesting}.
+The Hessian matrix of the entropy is 
+\begin{eqnarray}
+\left(\begin{array}{llll}  -\frac{1}{c_v T^2} & 0 & 0 & 0 \\
+                                           0  & -frac{1}{\alpha_0} & 0 & 0 \\
+										   0 & 0 & -frac{1}{2\tau_1} & 0 \\
+										   0 & 0 & 0 & -\frac{1}{2\tau_2}
+										   \end{array} \right)
+\end{eqnarray}
+The concavity requirement follows from the requirement of the relaxation parameter $\tau,\tau_1,\tau_2$ and $c_v$.
 
 \section{Conclusion and discussion}
 In this work, the conservation-dissipation formalism of non-equilibrium thermodynamics is used to develop a unified approach for the heat transfer modeling. The procedure of heat transfer modeling with our approach is provided. The conservation-dissipation formalism is responsible for the well-posedness of the derived equations and is mathematical reasonable. The equations we obtained is hyperbolic and follows the structure in Yong's paper.\cite{yong2008interesting} We put the heat transfer modeling with a solid mathematical base as well as a physical insight. The non-equilibrium variables are introduced in our approach to describe how far the system goes beyond equilibrium. Our approach is useful near equilibrium as well as far from the equilibrium. Two temperature is defined, the equilibrium temperature and the generalized temperature. The two temperatures both measure the change of local entropy production with respect to the internal energy. 
