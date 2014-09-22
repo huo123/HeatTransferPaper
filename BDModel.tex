@@ -1,0 +1,78 @@
+%This is a derivation of Gang Chen's Ballistic-Diffusive Model 
+%Email:huoxiaokai_110@yeah.net
+\documentclass[a4paper]{letter}
+\begin{document}
+A derivation of Ballistic-Diffusive model
+
+Assume the ballistic and diffusive part of the variables are $u_b,u_d,T_b,T_d,\mathbf{q}_b,\mathbf{q}_d$ and
+\begin{eqnarray}
+u=u_b+u_d \\
+\mathbf{q}=\mathbf{w}_b+\mathbf{v}_d
+\end{eqnarray}
+Assume
+\begin{eqnarray}
+S=S(u_b,u_d,\mathbf{q}_b,\mathbf{q}_d)
+\end{eqnarray}
+then we could get
+\begin{eqnarray}
+S_t &=& S_{u_b} \dot{u_b}+S_{u_d} \dot{u_d} +S_{\mathbf{w}} \cdot \mathbf{w} +S_{\mathbf{v}} \cdot \mathbf{v} \\
+\end{eqnarray}
+Define
+\begin{eqnarray}
+T_b^{-1}=\frac{\partial S}{\partial u_b} \quad T_d^{-1}=\frac{\partial S}{\partial u_d}
+\end{eqnarray}
+then
+\begin{eqnarray}
+S_t = -\nabla(\mathbf{q}_b T_b^{-1}+\mathbf{q}_d T_d^{-1})+\mathbf{q}_b \cdot \nabla T_b^{-1} +\mathbf{q}_d \cdot \nabla T_d^{-1} + S_{\mathbf{w}} \cdot \dot{\mathbf{w}} +S_{\mathbf{v}} \cdot \dot{\mathbf{v}}
+\end{eqnarray}
+Let $S_{\mathbf{w}}=\mathbf{q}_d,S_{\mathbf{v}}=\mathbf{q}_b$ 
+\begin{eqnarray}
+S_t = -\nabla(\mathbf{q}_b T_b^{-1}+\mathbf{q}_d T_d^{-1}) + \mathbf{q}_d \cdot (\dot{\mathbf{w}}+\nabla T_d^{-1})+\mathbf{q}_b \cdot (\dot{\mathbf{v}}+\nabla T_b^{-1})
+\end{eqnarray}
+To satisfy the conservation-dissipation structure, take
+\begin{eqnarray}
+\dot{\mathbf{w}}+\nabla T_d^{-1} = M_d \mathbf{q}_d \\
+ \dot{\mathbf{v}}+\nabla T_b^{-1} = M_b \mathbf{q}_b
+\end{eqnarray}
+
+
+If we suppose the form of the entropy 
+\begin{eqnarray}
+S = S_{eq}(u_b,u_d) - \frac{1}{2\alpha_d} \mathbf{w}^2 -\frac{1}{2}{2\alpha_b}^2 
+\end{eqnarray}
+we have
+\begin{eqnarray}
+\mathbf{q}_d = \alpha_d \mathbf{w} \\
+\mathbf{q}_b = \alpha_b \mathbf{v} 
+\end{eqnarray}
+
+If we take 
+\begin{eqnarray}
+\alpha_d = \frac{\tau_d}{\lambda_d T_d^2} \\
+\alpha_b = \frac{\tau_b}{\lambda_b T_b^2} \\
+M_d = \frac{1}{\lambda_d T_d^2} \\
+M_b = \frac{1}{\lambda_b T_b^2}
+\end{eqnarray}
+we have
+\begin{eqnarray}
+\tau_d \dot{\mathbf{q}_d} +\mathbf{q}_d = -\lambda_d \nabla T_d \\
+\tau_b \dot{\mathbf{q}_b} +\mathbf{q}_b = -\lambda_b \nabla T_b
+\end{eqnarray}
+
+And if we use the conservation law $\dot{u_b}+\dot{u_d}+\nabla \cdot (\mathbf{q}_b+\mathbf{q}_d)=0$ and the following formula from the Boltzmann equation by Gang Chen
+\begin{eqnarray}
+\dot{u_b}+\nabla \cdot \mathbf{q}_b =-\frac{u_b}{\tau_b}
+\end{eqnarray}
+we then arrive at
+\begin{eqnarray}
+\tau_d \frac{\partial^2 u_d}{\partial t^2} + \frac{\partial u_d}{\partial t} -\frac{\tau_d}{\tau_b} \dot{u_b} - \frac{1}{\tau_b} u_b =\nabla \cdot (\lambda_d \nabla T_d) \\
+\tau_b \frac{\partial^2 u_b}{\partial t^2} + 2 \frac{\partial u_b}{\partial t} +\frac{1}{\tau_b} u_b =\nabla \cdot (\lambda_b \nabla T_b)
+\end{eqnarray}
+
+And Gang Chen's result is obtained when $\tau_b=\tau_d=\tau,\lambda_b=\lambda_d=\lambda$ and $c_{vb}=\frac{u_b}{T_b}=c_{vd}=\frac{u_d}{T_d}=c_v$
+\begin{eqnarray}
+\tau \frac{\partial^2 u_d}{\partial t^2}+\frac{\partial u_d}{\partial t} +\nabla \cdot \mathbf{q}_b = -\nabla \cdot (\frac{\lambda}{c_v}\nabla u_d)
+\end{eqnarray}
+where $\mathbf{q}_b$ could be calculated with the Boltzmann's equation.
+
+\end{document}
